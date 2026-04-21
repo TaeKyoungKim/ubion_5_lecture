@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotly 샘플</title>
+    <!-- Plotly.js CDN -->
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #myDiv { width: 100%; max-width: 800px; height: 500px; margin: 0 auto; }
+        h1 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Plotly 막대 그래프 샘플</h1>
+    <!-- Plotly 차트가 렌더링될 영역 -->
+    <div id="myDiv"></div>
+
+    <script>
+        // 데이터 설정
+        var data = [
+            {
+                x: ['사과', '바나나', '포도', '오렌지', '수박'],
+                y: [20, 14, 23, 10, 8],
+                type: 'bar',
+                marker: {
+                    color: ['#ff9999', '#ffe680', '#c299ff', '#ffb366', '#99ff99']
+                }
+            }
+        ];
+
+        // 레이아웃 설정
+        var layout = {
+            title: '과일 판매량',
+            xaxis: {
+                title: '과일 종류'
+            },
+            yaxis: {
+                title: '판매 수량(개)'
+            }
+        };
+
+        // 차트 그리기
+        Plotly.newPlot('myDiv', data, layout);
+    </script>
+</body>
+</html>
